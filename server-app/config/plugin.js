@@ -6,4 +6,9 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
+  // add egg-sql plugin
+  mysql: {
+    enable: true,
+    package: 'egg-mysql'
+  }
 };

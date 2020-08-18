@@ -18,6 +18,19 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  // add egg-mysql
+  config.mysql = {
+    client: {
+      host: 'localhost',
+      port: '3306',
+      user: 'root',
+      password: '123456',
+      database: 'vue_egg_test',
+    },
+    app: true, // 是否加载到app上
+    agent: false
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
