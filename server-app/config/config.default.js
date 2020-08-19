@@ -31,6 +31,20 @@ module.exports = appInfo => {
     agent: false
   };
 
+  // 配置跨域访问
+  config.security = {
+    crsf: {
+      enable: false, // 前后端分离post请求不方便携带-csrf
+      ignoreJSON: true
+    },
+    domainWhiteList: ['http://localhost:8081']  // 配置白名单
+  };
+  config.cors = {
+    // origin: '*', // 允许跨域访问，注释掉则允许白名单访问
+    credentials: true, //允许跨域携带cookies
+    allowMethods: 'GET, HEAD, PUT, POST, DELETE, PATCH'
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
