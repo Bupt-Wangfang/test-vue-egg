@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
+    <van-tabbar route>
+      <van-tabbar-item replace to="/" icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item replace to="/add" icon="search">添加</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {}
 }
 </script>
 
