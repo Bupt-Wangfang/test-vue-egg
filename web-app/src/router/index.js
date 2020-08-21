@@ -7,8 +7,12 @@ export default new Router({
     mode: 'hash',
     routes: [
         {
-            path: '/we',
+            path: '/',
             component: () => import('../views/Home')
+        },
+        {
+            path: '/add',
+            component: () => import('../views/Add')
         },
     ]
 })

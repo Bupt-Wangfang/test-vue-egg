@@ -1,6 +1,6 @@
 <template>
  <div>
-     <vlan-list @load="onLoad" v-model="loading" :finished='finished' finished-text="没有更多了">
+     <van-list @load="onLoad" v-model="loading" :finished='finished' finished-text="没有更多了">
          <van-cell v-for="item in list" :key="item.id" @click="clickEvent(item.id)">
              <div class="a-img">
                  <img :src="item.img">
@@ -10,14 +10,13 @@
                  <div>{{item.createTime}}</div>
              </div>
          </van-cell>
-     </vlan-list>
+     </van-list>
  </div>
 </template>
 
 <script>
 // 引入组件
 import {List, Cell} from "vant";
-import axios from "axios";
 import moment from "moment";
 
 export default {
@@ -36,7 +35,7 @@ export default {
  methods:{
      onLoad() {
          // axios请求
-         axios.get('http://localhost:7001/article').then(res => {
+         this.$axios.get('http://localhost:7001/article').then(res => {
              if (res.status == 200) {
                  this.loading = false;
                  this.finished = true;

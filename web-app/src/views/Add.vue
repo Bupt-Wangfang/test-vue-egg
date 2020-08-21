@@ -1,6 +1,6 @@
 <template>
     <div>
-        <vant-uploader :max-count="1" :after-read="afterRead" v-model="fileList" />
+        <van-uploader :max-count="1" :after-read="afterRead" v-model="fileList" />
         <van-cell-group>
             <van-field v-model="title" placeholder="请输入文章标题" />
             <van-field v-model="content" placeholder="请输入文章内容" type="textarea" autosize />
@@ -37,7 +37,7 @@ export default {
                 content: this.content,
                 img: this.img
             };
-            axios.post("http://localhost:7001/article", data)
+            this.$axios.post("http://localhost:7001/article", data)
             .then(
                 this.$router.push({path: '/'})
             );

@@ -6,7 +6,8 @@ import axios from "axios"
 
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
-Vue.use(axios);
+
+Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false
 

@@ -9,9 +9,13 @@
 </template>
 
 <script>
+import { Tabbar, TabbarItem } from 'vant';
 export default {
   name: 'App',
-  components: {}
+  components: {
+    [Tabbar.name]: Tabbar,
+    [TabbarItem.name]: TabbarItem
+  }
 }
 </script>
 
