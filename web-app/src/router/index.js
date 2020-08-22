@@ -14,5 +14,9 @@ export default new Router({
             path: '/add',
             component: () => import('../views/Add')
         },
+        {
+            path: '/detail',
+            component: () => import('../views/Detail')
+        }
     ]
 })
