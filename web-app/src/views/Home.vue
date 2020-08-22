@@ -35,7 +35,7 @@ export default {
  methods:{
      onLoad() {
          // axios请求
-         this.$axios.get('http://localhost:7001/article').then(res => {
+         this.$axios.get('/api/article').then(res => {
              if (res.status == 200) {
                  this.loading = false;
                  this.finished = true;
