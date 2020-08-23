@@ -16,10 +16,24 @@ class ArticleController extends Controller {
     const { ctx } = this;
     let id = ctx.params.id;
     const result = await ctx.service.article.getArticle(id);
+    console.log(result);
     ctx.body = {
         code: 200,
         msg: result
     };
+  }
+
+  async addArticle() {
+    const { ctx } = this;
+    let params = {
+      ...ctx.request.body,
+      createTime: moment().format("YYYY-MM-DD HH:mm:ss")
+    };
+    const result = await ctx.service.article.addArticle(params);
+    ctx.body = {
+      code: 200,
+      msg: result
+    }
   }
 }
 

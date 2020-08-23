@@ -21,7 +21,8 @@ export default {
         }
     },
     created() {
-        this.$axios.get("/api/article/" + this.$route.query.id)
+        let id = this.$route.query.id;
+        this.$axios.get(`/api/article/${id}`)
         .then(res => {
             res.data.msg.createTime = moment(res.data.msg.createTime).format("YYYY-MM-DD HH:mm:ss");
             this.detail = res.data.msg;
