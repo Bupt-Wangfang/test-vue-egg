@@ -1,6 +1,7 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+const moment = require('moment')
 
 class ArticleController extends Controller {
   async showAllArticle() {
@@ -16,7 +17,6 @@ class ArticleController extends Controller {
     const { ctx } = this;
     let id = ctx.params.id;
     const result = await ctx.service.article.getArticle(id);
-    console.log(result);
     ctx.body = {
         code: 200,
         msg: result

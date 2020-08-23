@@ -33,11 +33,12 @@ module.exports = appInfo => {
 
   // 配置跨域访问
   config.security = {
-    crsf: {
-      enable: false, // 前后端分离post请求不方便携带-csrf
+    csrf: {
+      // eggjs的安全机制
+      enable: false,
       ignoreJSON: true
     },
-    domainWhiteList: ['http://localhost:8081']  // 配置白名单
+    domainWhiteList: ['http://localhost:8888']  // 配置白名单
   };
   config.cors = {
     // origin: '*', // 允许跨域访问，注释掉则允许白名单访问

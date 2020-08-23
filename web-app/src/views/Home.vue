@@ -70,6 +70,10 @@ export default {
 .a-img {
     float: left;
 }
+.a-img img {
+    width: 60px;
+    height: 60px;
+}
 .a-text {
     float: right;
 }

@@ -37,7 +37,7 @@ export default {
                 content: this.content,
                 img: this.img
             };
-            this.$axios.post("http://localhost:7001/article", data)
+            this.$axios.post("/api/article", data)
             .then(
                 this.$router.push({path: '/'})
             );
