@@ -35,8 +35,9 @@ module.exports = appInfo => {
   config.security = {
     csrf: {
       // eggjs的安全机制
-      enable: false,
-      ignoreJSON: true
+      // enable: false,  // 不到不得已的时候最好不要关闭CSRF
+      // ignoreJSON: true
+      headerName: 'x-csrf-token',
     },
     domainWhiteList: ['http://localhost:8888']  // 配置白名单
   };

@@ -19,6 +19,11 @@ export default {
         [CellGroup.name]: CellGroup,
         [Field.name]: Field
     },
+    mounted () {
+        this.$axios.get('/api/loginCsrf').then(res => {
+            sessionStorage.setItem('csrfToken', res.data.csrf);
+        })
+    },
     data(){
         return {
             title: '',
@@ -37,7 +42,12 @@ export default {
                 content: this.content,
                 img: this.img
             };
-            this.$axios.post("/api/article", data)
+            this.$axios.post("/api/article", data,
+            {
+                headers: {
+                    'x-csrf-token': sessionStorage.getItem('csrfToken')
+                }
+            })
             .then(
                 this.$router.push({path: '/'})
             );
